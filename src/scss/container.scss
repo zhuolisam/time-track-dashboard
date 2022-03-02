@@ -1,0 +1,22 @@
+@use './general.scss' as *;
+
+.container {
+  border: 1px solid red;
+  min-width: 40rem;
+  width: 77%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2.2rem;
+  gap: 2.2rem;
+
+  @media (min-width: $breakpoint-xlg) {
+    width: 110rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    // grid-template: repeat(2, 24.4rem) / repeat(4, 25.5rem);
+  }
+}
+
