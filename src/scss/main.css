@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+.badge {
+  color: #fff;
+  border-radius: 1.5rem;
+  background: #1c1f4a;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .badge {
+    width: 25%;
+  }
+}
+.badge__header {
+  display: grid;
+  grid-template: auto/max-content 1fr;
+  grid-template-areas: "image title" "image name";
+  background: #5847eb;
+  border-radius: 1.5rem;
+  padding: 3rem;
+}
+@media (min-width: 1200px) {
+  .badge__header {
+    grid-template: 0.5fr -webkit-min-content auto/1fr;
+    grid-template: 0.5fr min-content auto/1fr;
+    grid-template-areas: "image" "title" "name";
+    padding: 3.7rem 3rem 8rem;
+  }
+}
+.badge__header img {
+  grid-area: image;
+  width: 6.4rem;
+  box-shadow: 0 0 0 0.3rem white;
+  border-radius: 50%;
+  margin-right: 3rem;
+}
+@media (min-width: 1200px) {
+  .badge__header img {
+    width: 7.8rem;
+    margin-bottom: 4.3rem;
+  }
+}
+.badge__header p {
+  grid-area: title;
+  align-self: flex-end;
+  color: #bdc1ff;
+  font-size: 1.5rem;
+}
+.badge__header h2 {
+  grid-area: name;
+  font-weight: 300;
+  font-size: 2.4rem;
+}
+@media (min-width: 1200px) {
+  .badge__header h2 {
+    font-size: 4rem;
+    line-height: 1.3;
+  }
+}
+.badge__tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.1rem;
+  padding: 2.5rem 3rem;
+}
+@media (min-width: 1200px) {
+  .badge__tabs {
+    gap: 1.2rem;
+    padding: 1.7rem 3rem;
+    flex-direction: column;
+    justify-content: end;
+  }
+}
+.badge__tabs a {
+  text-decoration: none;
+  color: #6f76c8;
+  font-weight: 300;
+  transition: 0.3s ease-in-out;
+}
+.badge__tabs a:hover {
+  color: white;
+}
+.badge__tabs a.active {
+  color: white;
+}
+
+body {
+  background: #0f1424;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+@media (min-width: 1200px) {
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* For frameworks React & Next */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.container {
+  border: 1px solid red;
+  min-width: 40rem;
+  width: 77%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2.2rem;
+  gap: 2.2rem;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 110rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.2rem;
+}
+@media (min-width: 1200px) {
+  .cards {
+    height: 100%;
+    display: grid;
+    grid-template: repeat(2, 3fr)/repeat(3, 3fr);
+  }
+}
+
+.cards > * {
+  flex: 1 1 10rem;
+}
+
+.card {
+  color: #fff;
+  border-radius: 1.5rem 1.5rem 2rem 2rem;
+  padding-top: 3.8rem;
+  background-repeat: no-repeat;
+  background-position: top -1.1rem right 1.7rem;
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+  .card {
+    padding-top: 4.5rem;
+  }
+}
+.card:hover .card__content {
+  background-color: #33387a;
+}
+.card__content {
+  display: grid;
+  grid-template: auto/1fr -webkit-max-content;
+  grid-template: auto/1fr max-content;
+  gap: 1.5rem;
+  grid-template-areas: "time-category options" "current-hours past-hours";
+  align-items: center;
+  background-color: #1c1f4a;
+  padding: 3rem 2.4rem;
+  border-radius: 1.5rem;
+  transition: 0.3s ease-in-out;
+}
+@media (min-width: 1200px) {
+  .card__content {
+    grid-template: 1.8rem 1fr 1.5rem/1fr 1fr;
+    grid-template-areas: "time-category options" "current-hours current-hours" "past-hours past-hours";
+    gap: 0;
+    height: 100%;
+  }
+}
+.card__content .card__title {
+  grid-area: time-category;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.card__content .card__options {
+  grid-area: options;
+  justify-self: flex-end;
+  padding: 0.75rem 0 1rem 1rem;
+  transition: 0.3s ease-in-out;
+}
+.card__content .card__options:hover {
+  filter: brightness(200%);
+  transform: scale(1.1);
+  transform-origin: center;
+}
+.card__content .card__current-hours {
+  grid-area: current-hours;
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 0;
+}
+@media (min-width: 1200px) {
+  .card__content .card__current-hours {
+    align-self: flex-end;
+    padding-bottom: 0.2rem;
+    font-size: 5.6rem;
+    line-height: normal;
+  }
+}
+.card__content .card__past-hours {
+  grid-area: past-hours;
+  justify-self: flex-end;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #bdc1ff;
+}
+@media (min-width: 1200px) {
+  .card__content .card__past-hours {
+    justify-self: flex-start;
+  }
+}
+.card.work {
+  background-color: #ff8c66;
+  background-image: url("../images/icon-work.svg");
+}
+.card.play {
+  background-color: #56c2e6;
+  background-image: url("../images/icon-play.svg");
+}
+.card.study {
+  background-color: #ff5c7c;
+  background-image: url("../images/icon-study.svg");
+}
+.card.exercise {
+  background-color: #4acf81;
+  background-image: url("../images/icon-exercise.svg");
+}
+.card.social {
+  background-color: #7536d3;
+  background-image: url("../images/icon-social.svg");
+}
+.card.selfcare {
+  background-color: #f1c65b;
+  background-image: url("../images/icon-self-care.svg");
+}
+
+.animation-FadeIn {
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0%;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}/*# sourceMappingURL=main.css.map */
