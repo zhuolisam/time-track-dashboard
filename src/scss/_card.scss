@@ -9,6 +9,7 @@
   
   // display: grid;
   // grid-template-columns: repeat(auto-fit, minmax(33%,1fr));
+
   gap: 2.2rem;
 
 
@@ -43,7 +44,7 @@
   &__content {
     display: grid;
     grid-template: auto / 1fr max-content;
-    gap: 1.5rem;
+    gap: 1.2rem;
     grid-template-areas:
       "time-category options"
       "current-hours past-hours";
